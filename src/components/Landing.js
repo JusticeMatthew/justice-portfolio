@@ -53,7 +53,7 @@ export default function Landing() {
           <span className='welcome'>e</span>
         </StyledWelcome>
       </Fade>
-      <Scroll to='projects' smooth={true}>
+      <Scroll to='about' smooth={true}>
         <StyledArrow>
           <span>
             <IconButton>
@@ -138,6 +138,7 @@ const StyledArrow = styled.div`
       transform: translateY(-15px);
     }
   }
+
   span {
     animation-duration: 0.8s;
     animation-fill-mode: both;

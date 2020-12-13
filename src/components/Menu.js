@@ -58,6 +58,19 @@ export default function TopMenu() {
             Home
           </MenuItem>
         </Scroll>
+        <Scroll to='about' smooth={true}>
+          <MenuItem className={classes.MenuItem} onClick={handleClose}>
+            About
+          </MenuItem>
+        </Scroll>
+        <Scroll to='projects' smooth={true}>
+          <MenuItem className={classes.MenuItem} onClick={handleClose}>
+            Projects
+          </MenuItem>
+        </Scroll>
+        <MenuItem className={classes.MenuItem} onClick={handleClose}>
+          Contact
+        </MenuItem>
         <MenuItem onClick={handleClose}>
           <a
             className={classes.links}
@@ -66,14 +79,6 @@ export default function TopMenu() {
           >
             Resume
           </a>
-        </MenuItem>
-        <Scroll to='projects' smooth={true}>
-          <MenuItem className={classes.MenuItem} onClick={handleClose}>
-            Projects
-          </MenuItem>
-        </Scroll>
-        <MenuItem className={classes.MenuItem} onClick={handleClose}>
-          Contact
         </MenuItem>
       </Menu>
     </div>

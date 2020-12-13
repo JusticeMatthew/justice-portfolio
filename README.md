@@ -1,9 +1,19 @@
-This will be an ongoing project of my portfolio!
+# Matthew Justice Portfolio
 
-_TODO_
+## Intro
 
--Add about section
--Add functionality to menu (DL link for resume and contacts)
--Add back to top button
--Break up Landing into smaller components since it's gotten ridiculously long
+```
+An ongoing project representing my future portfolio. For now there are pets as placeholders for future projects. 🐶🐱
+```
+
+## TODO
+
+```
+- [x] Add about section
+- [x] Add functionality to menu
+- [ ] Add floating back to top button (probly with MUI bottom nav?)
+- [ ] Break up Landing into smaller components since it's gotten ridiculously long
+- [ ] Make down arrow component to DRY out code
+- [ ] Convert all 'makestyles' into one themeprovider file
 -TBD
+```

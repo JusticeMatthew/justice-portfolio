@@ -5,6 +5,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Collapse } from '@material-ui/core';
+// When I have links to projects I will use these imports
 // import CardActionArea from '@material-ui/core/CardActionArea';
 // import CardActions from '@material-ui/core/CardActions';
 // import Button from '@material-ui/core/Button';
@@ -22,7 +23,7 @@ const useStyles = makeStyles({
     fontFamily: 'Titillium Web',
     fontWeight: 'bold',
     fontSize: '1.8rem',
-    color: 'white',
+    color: 'royalblue',
   },
   desc: {
     fontFamily: 'Titillium Web',
@@ -35,8 +36,8 @@ export default function ProjectCard({ project, checked }) {
   const classes = useStyles();
 
   return (
-    <Collapse in={checked} {...(checked ? { timeout: 1000 } : {})}>
-      <Card className={classes.root}>
+    <Collapse in={checked} {...(checked ? { timeout: 1300 } : {})}>
+      <Card className={classes.root} raised={true}>
         <CardMedia
           className={classes.media}
           image={project.imageUrl}
@@ -55,7 +56,9 @@ export default function ProjectCard({ project, checked }) {
             {project.desc}
           </Typography>
         </CardContent>
-        {/* <CardActions>
+        {/* 
+        When I have links to projects I will reimplement this
+        <CardActions>
         <Button size='small' color='primary'>
         Visit
         </Button>

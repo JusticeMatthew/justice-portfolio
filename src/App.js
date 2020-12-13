@@ -1,5 +1,7 @@
 import Landing from './components/Landing';
 import Projects from './components/Projects';
+import About from './components/AboutMe';
+import Contact from './components/Contact';
 
 function App() {
   window.onbeforeunload = function () {
@@ -9,7 +11,9 @@ function App() {
   return (
     <div className='App'>
       <Landing />
+      <About />
       <Projects />
+      <Contact />
     </div>
   );
 }
