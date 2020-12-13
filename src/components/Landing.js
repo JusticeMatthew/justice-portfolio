@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { AppBar, Fade, IconButton, Toolbar } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
 import styled from 'styled-components';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { Link as Scroll } from 'react-scroll';
+import TopMenu from './Menu';
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -22,28 +20,15 @@ const useStyles = makeStyles(() => ({
   AppBarTitle: {
     flexGrow: '1',
   },
-  MenuIcon: {
-    color: 'white',
-    fontSize: '3rem',
-  },
 }));
 
 export default function Landing() {
   const classes = useStyles();
   const [checked, setChecked] = useState(false);
-  const [anchorEl, setAnchorEl] = React.useState(null);
 
   useEffect(() => {
     setChecked(true);
   }, []);
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   return (
     <div className={classes.root} id='landing'>
@@ -53,36 +38,19 @@ export default function Landing() {
             <h1 className={classes.AppBarTitle}>
               <span className='colortext'>M</span>Justice
             </h1>
-            <IconButton
-              aria-controls='simple-menu'
-              aria-haspopup='true'
-              onClick={handleClick}
-            >
-              <MenuIcon className={classes.MenuIcon} />
-            </IconButton>
-            <Menu
-              id='simple-menu'
-              anchorEl={anchorEl}
-              keepMounted
-              open={Boolean(anchorEl)}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
-              <MenuItem onClick={handleClose}>My account</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
-            </Menu>
+            <TopMenu />
           </Toolbar>
         </StyledToolBar>
       </AppBar>
       <Fade in={checked} timeout={3000}>
         <StyledWelcome>
-          <span className='w'>W</span>
-          <span className='e'>e</span>
-          <span className='l'>l</span>
-          <span className='c'>c</span>
-          <span className='o'>o</span>
-          <span className='m'>m</span>
-          <span className='e'>e</span>
+          <span className='welcome'>W</span>
+          <span className='welcome'>e</span>
+          <span className='welcome'>l</span>
+          <span className='welcome'>c</span>
+          <span className='welcome'>o</span>
+          <span className='welcome'>m</span>
+          <span className='welcome'>e</span>
         </StyledWelcome>
       </Fade>
       <Scroll to='projects' smooth={true}>
@@ -128,25 +96,7 @@ const StyledWelcome = styled.h1`
     cursor: default;
   }
 
-  .w:hover {
-    color: royalblue;
-  }
-  .e:hover {
-    color: royalblue;
-  }
-  .l:hover {
-    color: royalblue;
-  }
-  .c:hover {
-    color: royalblue;
-  }
-  .o:hover {
-    color: royalblue;
-  }
-  .m:hover {
-    color: royalblue;
-  }
-  .e:hover {
+  .welcome:hover {
     color: royalblue;
   }
 
