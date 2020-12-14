@@ -1,13 +1,13 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
-import { IconButton, Fade } from '@material-ui/core';
+import { IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import VerticalAlignTopIcon from '@material-ui/icons/VerticalAlignTop';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Link as Scroll } from 'react-scroll';
 import styled from 'styled-components';
-import useWindowPosition from '../hooks/windowPositionCONTACTS';
+// import useWindowPosition from '../hooks/windowPositionCONTACTS';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -36,36 +36,36 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contact() {
   const classes = useStyles();
-  const checked = useWindowPosition('projects');
+  // const checked = useWindowPosition('projects');
 
   return (
     <div className={classes.root} id='contact'>
-      <Fade in={checked} timeout={2500}>
-        <StyledContent className={classes.contactTitle}>
-          <h2>
-            Find <span>Me</span> @
-          </h2>
-        </StyledContent>
-      </Fade>
+      {/* <Fade in={checked} timeout={2500}> */}
+      <StyledContent className={classes.contactTitle}>
+        <h2>
+          Find <span>Me</span> @
+        </h2>
+      </StyledContent>
+      {/* </Fade> */}
       <div className={classes.linkswrapper}>
-        <Fade in={checked} timeout={2500}>
-          <IconButton
-            aria-label='Github Profile'
-            onClick={() => window.open('https://github.com/JusticeMatthew')}
-          >
-            <GitHubIcon className={classes.links}></GitHubIcon>
-          </IconButton>
-        </Fade>
-        <Fade in={checked} timeout={2500}>
-          <IconButton
-            aria-label='Linked-In Profile'
-            onClick={() =>
-              window.open('https://www.linkedin.com/in/justicematthew/')
-            }
-          >
-            <LinkedInIcon className={classes.links}></LinkedInIcon>
-          </IconButton>
-        </Fade>
+        {/* <Fade in={checked} timeout={2500}> */}
+        <IconButton
+          aria-label='Github Profile'
+          onClick={() => window.open('https://github.com/JusticeMatthew')}
+        >
+          <GitHubIcon className={classes.links}></GitHubIcon>
+        </IconButton>
+        {/* </Fade> */}
+        {/* <Fade in={checked} timeout={2500}> */}
+        <IconButton
+          aria-label='Linked-In Profile'
+          onClick={() =>
+            window.open('https://www.linkedin.com/in/justicematthew/')
+          }
+        >
+          <LinkedInIcon className={classes.links}></LinkedInIcon>
+        </IconButton>
+        {/* </Fade> */}
       </div>
       <div>
         <Scroll to='landing' smooth={true}>
