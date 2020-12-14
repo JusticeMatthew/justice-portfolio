@@ -63,7 +63,7 @@ export default function TopMenu() {
             Projects
           </MenuItem>
         </Scroll>
-        <Scroll to='contacts' smooth={true}>
+        <Scroll to='contact' smooth={true}>
           <MenuItem className={classes.MenuItem} onClick={handleClose}>
             Contact
           </MenuItem>
