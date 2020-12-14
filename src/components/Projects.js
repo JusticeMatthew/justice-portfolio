@@ -89,17 +89,14 @@ const StyledArrow = styled.div`
       transform: translateY(0);
     }
     40% {
-      transform: translateY(-30px);
-    }
-    60% {
-      transform: translateY(-15px);
+      transform: translateY(-18px);
     }
   }
 
   span {
-    animation-duration: 0.8s;
+    animation-duration: 0.7s;
     animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
   span:hover {
