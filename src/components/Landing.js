@@ -56,7 +56,7 @@ export default function Landing() {
       <Scroll to='about' smooth={true}>
         <StyledArrow>
           <span>
-            <IconButton>
+            <IconButton disableRipple={true}>
               <ExpandMoreIcon className='downarrow' />
             </IconButton>
           </span>
@@ -88,8 +88,6 @@ const StyledWelcome = styled.h1`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border-radius: 10px;
-  text-shadow: 0px 0px 20px black;
 
   span {
     transition: 0.3s;

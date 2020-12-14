@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
-import { IconButton, Collapse } from '@material-ui/core';
+import { IconButton, Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import VerticalAlignTopIcon from '@material-ui/icons/VerticalAlignTop';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Link as Scroll } from 'react-scroll';
 import styled from 'styled-components';
-import useWindowPosition from '../hooks/windowPositionABOUT';
+import useWindowPosition from '../hooks/windowPositionCONTACTS';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,31 +22,59 @@ const useStyles = makeStyles((theme) => ({
   contactTitle: {
     fontSize: '2.7rem',
   },
+  links: {
+    color: 'white',
+    fontSize: '5rem',
+  },
+  linkswrapper: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignSelf: 'flex-start',
+  },
 }));
 
 export default function Contact() {
   const classes = useStyles();
-  const checked = useWindowPosition('landing');
+  const checked = useWindowPosition('projects');
 
   return (
-    <div className={classes.root} id='about'>
-      <Collapse in={checked} {...(checked ? { timeout: 1300 } : {})}>
-        <StyledContent>
-          <h2 className={classes.contactTitle}>
-            Contact <span>Me</span>
+    <div className={classes.root} id='contact'>
+      <Fade in={checked} timeout={2500}>
+        <StyledContent className={classes.contactTitle}>
+          <h2>
+            Find <span>Me</span> @
           </h2>
         </StyledContent>
-      </Collapse>
+      </Fade>
+      <div className={classes.linkswrapper}>
+        <Fade in={checked} timeout={2500}>
+          <IconButton
+            aria-label='Github Profile'
+            onClick={() => window.open('https://github.com/JusticeMatthew')}
+          >
+            <GitHubIcon className={classes.links}></GitHubIcon>
+          </IconButton>
+        </Fade>
+        <Fade in={checked} timeout={2500}>
+          <IconButton
+            aria-label='Linked-In Profile'
+            onClick={() =>
+              window.open('https://www.linkedin.com/in/justicematthew/')
+            }
+          >
+            <LinkedInIcon className={classes.links}></LinkedInIcon>
+          </IconButton>
+        </Fade>
+      </div>
       <div>
         <Scroll to='landing' smooth={true}>
           <StyledArrow>
             <span>
-              <IconButton>
+              <IconButton disableRipple={true}>
                 <VerticalAlignTopIcon className='downarrow' />
               </IconButton>
             </span>
-            <br />
-            Back to <span>Top</span>
           </StyledArrow>
         </Scroll>
       </div>
@@ -54,17 +84,11 @@ export default function Contact() {
 
 const StyledContent = styled.div`
   padding: 10px;
-  width: 100%;
+  min-width: 100%;
   text-align: center;
 
   span {
     color: royalblue;
-  }
-
-  img {
-    width: 20%;
-    border-radius: 500px;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -73,6 +97,7 @@ const StyledArrow = styled.div`
     color: white;
     font-size: 3rem;
   }
+
   .downarrow:hover {
     color: royalblue;
   }

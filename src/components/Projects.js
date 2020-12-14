@@ -27,7 +27,7 @@ export default function Projects() {
   const checked = useWindowPosition('about');
 
   return (
-    <div id='projects'>
+    <div id='projects' className={classes.wrapper}>
       <StyledTitle>
         <h2>
           <span>My</span> Projects
@@ -39,10 +39,10 @@ export default function Projects() {
         <ProjectCard project={projects[2]} checked={checked} />
       </div>
       <div className={classes.arrowroot}>
-        <Scroll to='projects' smooth={true}>
+        <Scroll to='contact' smooth={true}>
           <StyledArrow>
             <span>
-              <IconButton>
+              <IconButton disableRipple={true}>
                 <ExpandMoreIcon className='downarrow' />
               </IconButton>
             </span>

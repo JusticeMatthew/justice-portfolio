@@ -59,7 +59,7 @@ export default function About() {
       <Scroll to='projects' smooth={true}>
         <StyledArrow>
           <span>
-            <IconButton>
+            <IconButton disableRipple={true}>
               <ExpandMoreIcon className='downarrow' />
             </IconButton>
           </span>
