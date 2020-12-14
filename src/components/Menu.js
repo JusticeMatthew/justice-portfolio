@@ -53,11 +53,6 @@ export default function TopMenu() {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <Scroll to='landing' smooth={true}>
-          <MenuItem className={classes.MenuItem} onClick={handleClose}>
-            Home
-          </MenuItem>
-        </Scroll>
         <Scroll to='about' smooth={true}>
           <MenuItem className={classes.MenuItem} onClick={handleClose}>
             About
@@ -68,9 +63,11 @@ export default function TopMenu() {
             Projects
           </MenuItem>
         </Scroll>
-        <MenuItem className={classes.MenuItem} onClick={handleClose}>
-          Contact
-        </MenuItem>
+        <Scroll to='contacts' smooth={true}>
+          <MenuItem className={classes.MenuItem} onClick={handleClose}>
+            Contact
+          </MenuItem>
+        </Scroll>
         <MenuItem onClick={handleClose}>
           <a
             className={classes.links}
