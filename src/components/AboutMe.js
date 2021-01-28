@@ -42,17 +42,15 @@ export default function About() {
             About <span>Me</span>
           </h2>
           <p className={classes.content}>
-            I am currently a full-stack web development student at
+            Hello, I am <span>Matthew</span>. I am currently a full-stack web
+            development student at
             <span> Lambda School</span>.
             <br />I am passionate about <span>computers</span> and{' '}
-            <span>technology</span>. That passion is rapidly spreading to
-            <span> coding</span> the more I learn.
+            <span>technology</span>.<br />
+            Every day that passion is spreading rapidly to also encompass{' '}
+            <span> coding</span> as I learn more and more.
             <br />
-            This site will be the foundation of my <span>portfolio</span> and I
-            will continue to build on it from here.
-            <br />
-            In the future, the <span>projects</span> section will contain a
-            collection of my work...for now it has my <span>pets</span>, enjoy!
+            Please enjoy this small sample of my work.
           </p>
         </StyledContent>
       </Collapse>

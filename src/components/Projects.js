@@ -1,12 +1,14 @@
 import React from 'react';
+import { Link as Scroll } from 'react-scroll';
+
+import styled from 'styled-components';
 import { makeStyles } from '@material-ui/core/styles';
 import { IconButton } from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+
 import ProjectCard from './ProjectCard';
 import projects from '../constants/projects';
 import useWindowPosition from '../hooks/windowPositionPROJECTS';
-import styled from 'styled-components';
-import { Link as Scroll } from 'react-scroll';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,9 +36,9 @@ export default function Projects() {
         </h2>
       </StyledTitle>
       <div className={classes.root}>
-        <ProjectCard project={projects[0]} checked={checked} />
-        <ProjectCard project={projects[1]} checked={checked} />
-        <ProjectCard project={projects[2]} checked={checked} />
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} checked={checked} />
+        ))}
       </div>
       <div className={classes.arrowroot}>
         <Scroll to='contact' smooth={true}>

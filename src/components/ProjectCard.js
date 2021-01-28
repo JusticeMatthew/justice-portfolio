@@ -1,14 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Collapse } from '@material-ui/core';
-// When I have links to projects I will use these imports
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import Button from '@material-ui/core/Button';
+import CardActions from '@material-ui/core/CardActions';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles({
   root: {
@@ -24,6 +24,7 @@ const useStyles = makeStyles({
     fontWeight: 'bold',
     fontSize: '1.8rem',
     color: 'royalblue',
+    textShadow: '0 0 0 0',
   },
   desc: {
     fontFamily: 'Titillium Web',
@@ -39,12 +40,18 @@ export default function ProjectCard({ project, checked }) {
     <Collapse in={checked} {...(checked ? { timeout: 1300 } : {})}>
       <Card className={classes.root} raised={true}>
         <CardMedia
+          component='img'
           className={classes.media}
           image={project.imageUrl}
           title={project.title}
         />
         <CardContent>
-          <Typography gutterBottom component='h2' className={classes.title}>
+          <Typography
+            disableElevation
+            gutterBottom
+            component='h2'
+            className={classes.title}
+          >
             {project.title}
           </Typography>
           <Typography
@@ -54,16 +61,32 @@ export default function ProjectCard({ project, checked }) {
             className={classes.desc}
           >
             {project.desc}
+            {project.title === 'Pokemon Picker' && (
+              <StyledLink href='https://www.npmjs.com/package/react-particles-js'>
+                react-particles-js
+              </StyledLink>
+            )}
+            .
           </Typography>
         </CardContent>
-        {/* 
-        When I have links to projects I will reimplement this
         <CardActions>
-        <Button size='small' color='primary'>
-        Visit
-        </Button>
-      </CardActions> */}
+          <Button
+            href='https://poke-picker-redux.vercel.app/'
+            target='_blank'
+            variant='contained'
+            size='medium'
+            color='primary'
+            disableElevation
+          >
+            Visit
+          </Button>
+        </CardActions>
       </Card>
     </Collapse>
   );
 }
+
+const StyledLink = styled.a`
+  text-decoration: underline;
+  color: white;
+`;
