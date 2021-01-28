@@ -47,7 +47,7 @@ export default function About() {
             <span> Lambda School</span>.
             <br />I am passionate about <span>computers</span> and{' '}
             <span>technology</span>.<br />
-            Every day that passion is spreading rapidly to also encompass{' '}
+            Every day that passion is spreading rapidly to
             <span> coding</span> as I learn more and more.
             <br />
             Please enjoy this small sample of my work.
