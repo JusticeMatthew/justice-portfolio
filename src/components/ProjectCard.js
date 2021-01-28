@@ -62,7 +62,10 @@ export default function ProjectCard({ project, checked }) {
           >
             {project.desc}
             {project.title === 'Pokemon Picker' && (
-              <StyledLink href='https://www.npmjs.com/package/react-particles-js'>
+              <StyledLink
+                target='_blank'
+                href='https://www.npmjs.com/package/react-particles-js'
+              >
                 react-particles-js
               </StyledLink>
             )}
